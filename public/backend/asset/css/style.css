@@ -8,6 +8,15 @@ h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
+/*  
+custom style
+*/
+/* custom css style */
+.custom-infomation-error{
+    color: red;
+    font-size: 11px;
+}
+/* end custom css style */
 
 html, body{
 	font-family: 'Roboto', sans-serif;
