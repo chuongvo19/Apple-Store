@@ -51,6 +51,15 @@ body {
 	width: 100%;
 	overflow: hidden;
 }
+/*  
+custom style
+*/
+/* custom css style */
+.custom-infomation-error{
+    color: red;
+    font-size: 11px;
+}
+/* end custom css style */
 /*=======================================================
       HEADINGS
 ========================================================*/

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Middleware\Admin;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Constants;
 
-class AuthenticatedAsAdmin
+class MustBeUser
 {
     /**
      * Handle an incoming request.
@@ -18,13 +18,9 @@ class AuthenticatedAsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::check())
+        if(Auth::check() && Auth::user()->role != Constants::Role['USER'])
         {
-            return redirect()->route('admin.login');
-        }
-        if((Auth::check() && Auth::user()->role == Constants::Role['USER'] ))
-        {
-            return redirect()->route('frontend.index');
+            return redirect()->route('admin.dashboard');
         }
         return $next($request);
     }
