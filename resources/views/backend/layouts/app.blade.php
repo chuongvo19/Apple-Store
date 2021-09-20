@@ -228,14 +228,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{ asset('backend/asset/images/2.png') }}">
+                <img alt="" src="{{ Storage::disk('avatars')->url(Auth::user()->avatar) }}">
                 <span class="username">{{ Auth::user()->user_name }}</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="{{ route('account.show', Auth::user()->id) }}"><i class=" fa fa-suitcase"></i>Sửa thông tin</a></li>
+                <li><a href="{{ route('admin.show.change.password', Auth::user()->id) }}"><i class="fa fa-cog"></i> Đổi mật khẩu</a></li>
+                <li><a href="{{ route('admin.logout') }}"><i class="fa fa-key"></i>Đăng xuất</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
@@ -255,6 +255,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-user"></i>
+                        <span>Tài Khoản</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{ route('admin.client.index') }}">Tài Khoản Khách Hàng</a></li>
+						<li><a href="{{ route('account.index') }}">Tài Khoản Admin</a></li>
+                        <li><a href="{{ route('account.create') }}">Tạo Tài Khoản Admin</a></li>
+                    </ul>
                 </li>
             </ul>           
 		</div>

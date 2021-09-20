@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Auth;
@@ -20,5 +21,11 @@ Route::group(['prefix' => 'admin'], function(){
         })->name('admin.logout');
         // show dashboard
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+        // account
+        Route::resource('account', AccountController::class);
+        Route::get('admin/client-management', [AccountController::class, 'clientIndex'])->name('admin.client.index');
+        // change password
+        Route::get('account/change-password/{id}', [AccountController::class, 'showChangePassword'])->name('admin.show.change.password');
+        Route::put('account/change-password/{id}', [AccountController::class, 'changePassword'])->name('admin.change.password');
     });
 });

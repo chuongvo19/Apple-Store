@@ -16,6 +16,11 @@ custom style
     color: red;
     font-size: 11px;
 }
+/* custom show image admin */
+.custom-show-avatar{
+    width: 75px;
+    border-radius: 7px;
+}
 /* end custom css style */
 
 html, body{
