@@ -49,7 +49,7 @@ class AccountController extends Controller
         $admins = User::select('id','last_name', 'first_name', 'telephone', 'email', 'avatar')
                         ->where('role', 1)
                         ->orWhere('role', 2)
-                        ->get();
+                        ->paginate(10);
         return view('backend.account.admin', compact('admins'));
     }
 
@@ -57,8 +57,8 @@ class AccountController extends Controller
     {
         $accounts = User::select('id','last_name', 'first_name', 'telephone', 'email', 'avatar')
                         ->where('role', 3)
-                        ->get();
-        return view('backend.account.client', compact('accounts'));
+                        ->paginate(10);
+  ('backend.account.client', compact('accounts'));
     }
     public function show($id)
     {
@@ -70,6 +70,7 @@ class AccountController extends Controller
         // dd($request->input());
         [$file, $fileName] = $this->upload($request);
         $account = User::where('id', $id);
+        //Select * FROM USERS Where id = $id
         $result = $account->update([
             'user_name' => $request->input('user_name'),
             'last_name' => $request->input('last_name'),
@@ -124,5 +125,79 @@ class AccountController extends Controller
                 return redirect()->back()->with('notification', 'Nhập sai mật khẩu cũ');
             }
         
+    }
+    public function destroy($id)
+    {
+        User::find($id)->delete();
+        return redirect()->back()->with('notification', 'Delete Success');
+    }
+
+    public function searchAdmin(Request $request)
+    {
+        $searchText = $request->input('search');
+        $admins = User::select('id','last_name', 'first_name', 'telephone', 'email', 'avatar')
+                        ->where(function($query) {
+                            $query->where('role', 1);
+                            $query->orWhere('role', 2);
+                        })
+                        ->where(function($query) use ($searchText) {
+                            $query->where('last_name', 'LIKE', '%'.$searchText.'%');
+                            $query->orWhere('first_name', 'LIKE', '%'.$searchText.'%');
+                        })
+                        ->paginate(10);
+        $admins->appends(['search' => $searchText]);
+        return view('backend.account.admin', compact('admins'));
+    }
+    public function searchClient(Request $request)
+    {
+        $searchText = $request->input('search');
+        $accounts = User::select('id','last_name', 'first_name', 'telephone', 'email', 'avatar')
+                        ->where(function($query) {
+                            $query->where('role', 3);
+                        })
+                        ->where(function($query) use ($searchText) {
+                            $query->where('last_name', 'LIKE', '%'.$searchText.'%');
+                            $query->orWhere('first_name', 'LIKE', '%'.$searchText.'%');
+                        })
+                        ->paginate(10);
+        $accounts->appends(['search' => $searchText]);
+        return view('backend.account.client', compact('accounts'));
+    }
+
+    // admin rights
+    public function adminRights()
+    {
+        $admins = User::where('role', 1)->get();
+        $employees = User::where('role', 2)->get();
+        return view('backend.account.admin-rights', compact('admins', 'employees'));
+    }
+
+    // change role admin
+    public function changeRole($id)
+    {
+        $account = User::where('id', $id)->first();
+        $role = $account->role;
+        if($role == 1)
+        {
+            $changeRole = User::where('id', $id)
+                    ->update([
+                        'role' => 2,
+                    ]);
+            $role = 2;
+        }elseif($role == 2)
+            {
+                $changeRole = User::where('id', $id)
+                        ->update([
+                            'role' => 1,
+                        ]);
+                $role = 1;
+            }
+        $result = array(
+            'name' => $account->last_name.' '.$account->first_name,
+            'role' => $role,
+            'id'   => $id,
+        );
+
+        return $result;
     }
 }

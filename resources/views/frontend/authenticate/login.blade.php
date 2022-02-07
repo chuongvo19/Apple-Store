@@ -17,6 +17,11 @@
                         {{ Session::get('error') }}
                         </div><br>
                     @endif
+                    @if(Session::has('notification'))
+                        <div class='alert alert-success'>
+                        {{ Session::get('notification') }}
+                        </div><br>
+                    @endif
                     <form method="post" action="{{ route('frontend.authenticate.login') }}">
                         @csrf
                         <ul class="row">
@@ -31,7 +36,7 @@
                             </li>
                             <!-- LAST NAME -->
                             <li class="col-md-12">
-                                <label> Mật KHẨU
+                                <label> MẬT KHẨU
                                     <input type="password" name="password" value="" placeholder="">
                                     @error('password')
                                         <div class="custom-infomation-error">{{ $message }}</div>
@@ -54,7 +59,7 @@
                             <!-- FORGET PASS -->
                             <li class="col-md-4">
                                 <div class="checkbox margin-0 margin-top-20 text-right">
-                                    <a href="#.">Quên mật khẩu</a>
+                                    <a href="{{ route('frontend.show.forgot.password') }}">Quên mật khẩu</a>
                                 </div>
                             </li>
                         </ul>
@@ -73,16 +78,11 @@
         <!-- Main Heading -->
         <div class="heading text-center">
             <h4>APPLE STORE</h4>
-            <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+            <p>“Revs your Heart” – “Khởi dậy đam mê”</p>
         </div>
         <!-- Social Icons -->
         <ul class="social_icons">
-            <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-            <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-            <li><a href="#."><i class="icon-social-tumblr"></i></a></li>
-            <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-            <li><a href="#."><i class="icon-social-dribbble"></i></a></li>
+            <li><a href="https://www.facebook.com/Apple-Store-102817295515488/"><i class="icon-social-facebook"></i></a></li>
         </ul>
         </div>
     </section>

@@ -5,7 +5,7 @@
     <!-- page start-->
     <div class="row">
         @if (Session::has('notification'))
-            <div class='alert alert-danger'>
+            <div class='alert alert-success'>
                 {{ Session::get('notification') }}
             </div>
         @endif
@@ -41,7 +41,7 @@
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-info">Cập Nhật</button>
-                            <a href="{{ route('admin.dashboard') }}" type="submit" class="btn btn-danger">Dừng Lại</a>
+                            <a href="{{ route('admin.dashboard') }}" type="submit" class="btn btn-danger">Trở Lại</a>
                         </form>
                     </div>
                 </div>

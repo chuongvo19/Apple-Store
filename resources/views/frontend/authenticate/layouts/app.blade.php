@@ -62,9 +62,18 @@
           <!-- NAV -->
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
-              <li class="dropdown active"> <a href="{{ route('frontend.index') }}" >Trang chủ</a></li>
-              <!-- MEGA MENU -->
-              <li> <a href="contact.html"> Liên hệ</a> </li>
+              <li class="dropdown"> <a href="{{ route('frontend.index') }}" >Trang chủ</a></li>
+              @if (session('role-page') == 'loginForm')
+              <li class=" active"> <a href="{{ route('frontend.login') }}"> Đăng Nhập</a> </li>
+              @else
+              <li class=""> <a href="{{ route('frontend.login') }}"> Đăng Nhập</a> </li>
+              @endif
+              @if (session('role-page') == 'register')
+              <li class=" active"> <a href="{{ route('frontend.showRegisterForm') }}"> Đăng Ký</a> </li>
+              @else
+              <li> <a href="{{ route('frontend.showRegisterForm') }}"> Đăng Ký</a> </li>
+              @endif
+              <li> <a href="{{ route('frontend.show.contact') }}"> Liên hệ</a> </li>
             </ul>
           </div>
           <!-- Nav Right -->
@@ -75,80 +84,56 @@
   <!-- Content -->
   <div id="content"> 
     @yield('content')
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
   </div>
   
   <!--======= FOOTER =========-->
   <footer>
     <div class="container"> 
-      
-      <!-- ABOUT Location -->
-      <div class="col-md-3">
+        
+        <!-- ABOUT Location -->
+        <div class="col-md-3">
         <div class="about-footer"> <img class="margin-bottom-30" src="images/logo-foot.png" alt="" >
-          <p><i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
-            MD - 123, USA.</p>
-          <p><i class="icon-call-end"></i> 1.800.123.456789</p>
-          <p><i class="icon-envelope"></i> info@PAVSHOP.com</p>
+            <p><i class="icon-pointer"></i> 30 Đường Phạm Văn Đồng, <br>
+                P. Cổ Nhuế 1, Q. Bắc Từ Liêm, Tp. Hà Nội.</p>
+            <p><i class="icon-call-end"></i> 0972729989</p>
+            <p><i class="icon-envelope"></i> AppleSotresphone@gmail.com</p>
         </div>
-      </div>
-      
-      <!-- HELPFUL LINKS -->
-      <div class="col-md-3">
-        <h6>HELPFUL LINKS</h6>
+        </div>
+        
+        <!-- HELPFUL LINKS -->
+        <div class="col-md-3">
+        <h6>BẢO HÀNH – DỊCH VỤ</h6>
         <ul class="link">
-          <li><a href="#."> Products</a></li>
-          <li><a href="#."> Find a Store</a></li>
-          <li><a href="#."> Features</a></li>
-          <li><a href="#."> Privacy Policy</a></li>
-          <li><a href="#."> Blog</a></li>
-          <li><a href="#."> Press Kit </a></li>
+            <li><a href="#."> 30 Đường Phạm Văn Đồng,</a></li>
+            <li><a href="#."> Hotline: 0972729989</a></li>
+            <li><a href="#."> Giờ làm việc: 08.30 – 17.30 ( Nghỉ Chủ nhật và ngày lễ ) </a></li>
         </ul>
-      </div>
-      
-      <!-- SHOP -->
-      <div class="col-md-3">
-        <h6>SHOP</h6>
+        </div>
+        
+        <!-- SHOP -->
+        <div class="col-md-3">
+        <h6>CHĂM SÓC KHÁCH HÀNG</h6>
         <ul class="link">
-          <li><a href="#."> About Us</a></li>
-          <li><a href="#."> Career</a></li>
-          <li><a href="#."> Shipping Methods</a></li>
-          <li><a href="#."> Contact</a></li>
-          <li><a href="#."> Support</a></li>
-          <li><a href="#."> Retailer</a></li>
+            <li><a href="{{ route('frontend.show.contact') }}">Liên hệ</a></li>
         </ul>
-      </div>
-      
-      <!-- MY ACCOUNT -->
-      <div class="col-md-3">
-        <h6>MY ACCOUNT</h6>
+        </div>
+        
+        <!-- MY ACCOUNT -->
+        <div class="col-md-3">
+        <h6>THEO DÕI CHÚNG TÔI TRÊN</h6>
         <ul class="link">
-          <li><a href="#."> Login</a></li>
-          <li><a href="#."> My Account</a></li>
-          <li><a href="#."> My Cart</a></li>
-          <li><a href="#."> Wishlist</a></li>
-          <li><a href="#."> Checkout</a></li>
+            <li><a href="https://www.facebook.com/Apple-Store-102817295515488/"> Facebook</a></li>
         </ul>
-      </div>
-      
-      <!-- Rights -->
-      
-      <div class="rights">
-        <p>©  2017  PAVSHOP All right reserved. </p>
+        </div>
+        
+        <!-- Rights -->
+        
+        <div class="rights">
+        <p>©  2021 Apple Store. </p>
         <div class="scroll"> <a href="#wrap" class="go-up"><i class="lnr lnr-arrow-up"></i></a> </div>
-      </div>
+        </div>
     </div>
-  </footer>
+</footer>
   
   <!--======= RIGHTS =========--> 
   

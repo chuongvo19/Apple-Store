@@ -4,12 +4,12 @@
     <!-- page start-->
     <!-- page start-->
     <div class="row">
-        @if (Session::has('notification'))
-            <div class='alert alert-danger'>
-                {{ Session::get('notification') }}
-            </div>
-        @endif
         <div class="col-lg-12">
+            @if (Session::has('notification'))
+                <div class='alert alert-success'>
+                    {{ Session::get('notification') }}
+                </div>
+            @endif
             <section class="panel">
                 <header class="panel-heading">
                     TẠO TÀI KHOẢN ADMIN
@@ -54,7 +54,7 @@
                                 <input type="file" name="avatar" id="exampleInputFile" required>
                             </div><br>
                             <button type="submit" class="btn btn-info">Tạo</button>
-                            <a href="{{ route('admin.dashboard') }}" type="submit" class="btn btn-danger">Dừng Lại</a>
+                            <a href="{{ route('admin.dashboard') }}" type="submit" class="btn btn-danger">Trở Lại</a>
                         </form>
                     </div>
                 </div>

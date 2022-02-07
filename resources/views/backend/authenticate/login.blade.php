@@ -8,6 +8,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="{{ asset('backend/asset/css/bootstrap.min.css') }}" >
+<link rel="icon" type="image/png" href="{{ asset('backend/asset/images/icon-apple-store.png') }}">
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="{!! asset('backend/asset/css/style.css') !!}" rel='stylesheet' type='text/css' />
@@ -29,16 +31,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		{{ Session::get('error') }}
 		</div>
 	@endif
+	@if(Session::has('notification'))
+		<div class='custom-infomation-error'>
+		{{ Session::get('notification') }}
+		</div>
+	@endif
 		<form action="{{ route('admin.authenticate') }}" method="post">
             @csrf
 			<input type="email" class="ggg" name="email" placeholder="E-MAIL" required="">
 			<input type="password" class="ggg" name="password" placeholder="PASSWORD" required="">
 			<span><input type="checkbox" name="remember_token" /> Remember Me</span>
-			<h6><a href="#">Forgot Password?</a></h6>
+			<h6><a href="{{ route('auth.show.forgot.password') }}">Forgot Password?</a></h6>
 				<div class="clearfix"></div>
 				<input type="submit" value="Sign In" name="login">
 		</form>
-		<p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>
+
 </div>
 </div>
 <script src="{{ asset('backend/asset/js/bootstrap.js') }}"></script>

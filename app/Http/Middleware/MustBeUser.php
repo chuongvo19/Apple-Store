@@ -18,7 +18,7 @@ class MustBeUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role != Constants::Role['USER'])
+        if(Auth::check() && Auth::user()->role != 3)
         {
             return redirect()->route('admin.dashboard');
         }

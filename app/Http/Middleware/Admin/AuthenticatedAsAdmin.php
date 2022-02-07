@@ -22,7 +22,7 @@ class AuthenticatedAsAdmin
         {
             return redirect()->route('admin.login');
         }
-        if((Auth::check() && Auth::user()->role == Constants::Role['USER'] ))
+        if((Auth::check() && Auth::user()->role == 3 ))
         {
             return redirect()->route('frontend.index');
         }

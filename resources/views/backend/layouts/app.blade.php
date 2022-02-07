@@ -7,8 +7,10 @@
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
 <link rel="stylesheet" href="{{ asset('backend/asset/css/bootstrap.min.css') }}" >
+<!-- bootstrap-css -->
+<link rel="icon" type="image/png" href="{{ asset('backend/asset/images/icon-apple-store.png') }}">
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="{{ asset('backend/asset/css/style.css') }}" rel='stylesheet' type='text/css' />
@@ -26,6 +28,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{ asset('backend/asset/js/jquery2.0.3.min.js') }}"></script>
 <script src="{{ asset('backend/asset/js/raphael-min.js') }}"></script>
 <script src="{{ asset('backend/asset/js/morris.js') }}"></script>
+<link href="{{ asset('backend/asset/css/sweetalert.css') }}" rel="stylesheet">
+<!-- CSS -->
+<link rel="stylesheet" href="{{ asset('backend/asset/alertifyjs/css/alertify.min.css') }}"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="{{ asset('backend/asset/alertifyjs/css/themes/default.min.css') }}"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="{{ asset('backend/asset/alertifyjs/css/themes/semantic.min.css') }}"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="{{ asset('backend/asset/alertifyjs/css/themes/bootstrap.min.css') }}"/>
+
 </head>
 <body>
 <section id="container">
@@ -46,174 +58,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <ul class="nav top-menu">
         <!-- settings start -->
         <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="fa fa-tasks"></i>
-                <span class="badge bg-success">8</span>
-            </a>
-            <ul class="dropdown-menu extended tasks-bar">
-                <li>
-                    <p class="">You have 8 pending tasks</p>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Target Sell</h5>
-                                <p>25% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="45">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Product Delivery</h5>
-                                <p>45% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="78">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Payment collection</h5>
-                                <p>87% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="60">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info clearfix">
-                            <div class="desc pull-left">
-                                <h5>Target Sell</h5>
-                                <p>33% , Deadline  12 June’13</p>
-                            </div>
-                                    <span class="notification-pie-chart pull-right" data-percent="90">
-                            <span class="percent"></span>
-                            </span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="external">
-                    <a href="#">See All Tasks</a>
-                </li>
-            </ul>
+            
+            
         </li>
         <!-- settings end -->
         <!-- inbox dropdown start-->
         <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <i class="fa fa-envelope-o"></i>
-                <span class="badge bg-important">4</span>
-            </a>
-            <ul class="dropdown-menu extended inbox">
-                <li>
-                    <p class="red">You have 4 Mails</p>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/3.png"></span>
-                                <span class="subject">
-                                <span class="from">Jonathan Smith</span>
-                                <span class="time">Just now</span>
-                                </span>
-                                <span class="message">
-                                    Hello, this is an example msg.
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/1.png"></span>
-                                <span class="subject">
-                                <span class="from">Jane Doe</span>
-                                <span class="time">2 min ago</span>
-                                </span>
-                                <span class="message">
-                                    Nice admin template
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/3.png"></span>
-                                <span class="subject">
-                                <span class="from">Tasi sam</span>
-                                <span class="time">2 days ago</span>
-                                </span>
-                                <span class="message">
-                                    This is an example msg.
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/2.png"></span>
-                                <span class="subject">
-                                <span class="from">Mr. Perfect</span>
-                                <span class="time">2 hour ago</span>
-                                </span>
-                                <span class="message">
-                                    Hi there, its a test
-                                </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">See all messages</a>
-                </li>
-            </ul>
+            
+            
         </li>
         <!-- inbox dropdown end -->
         <!-- notification dropdown start-->
         <li id="header_notification_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                <i class="fa fa-bell-o"></i>
-                <span class="badge bg-warning">3</span>
-            </a>
-            <ul class="dropdown-menu extended notification">
-                <li>
-                    <p>Notifications</p>
-                </li>
-                <li>
-                    <div class="alert alert-info clearfix">
-                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                        <div class="noti-info">
-                            <a href="#"> Server #1 overloaded.</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="alert alert-danger clearfix">
-                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                        <div class="noti-info">
-                            <a href="#"> Server #2 overloaded.</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="alert alert-success clearfix">
-                        <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                        <div class="noti-info">
-                            <a href="#"> Server #3 overloaded.</a>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
+            
         </li>
         <!-- notification dropdown end -->
     </ul>
@@ -222,8 +79,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="top-nav clearfix">
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
-        <li>
-            <input type="text" class="form-control search" placeholder=" Search">
+        {{-- <li>
+            <input type="text" class="form-control search" placeholder=" Search"> --}}
         </li>
         <!-- user login dropdown start-->
         <li class="dropdown">
@@ -251,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="{{ route('admin.dashboard') }}">
+                    <a class="" href="{{ route('admin.dashboard') }}">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -264,9 +121,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sub">
 						<li><a href="{{ route('admin.client.index') }}">Tài Khoản Khách Hàng</a></li>
 						<li><a href="{{ route('account.index') }}">Tài Khoản Admin</a></li>
+                        @if (Auth::user()->role == 1)
+						<li><a href="{{ route('admin.rights') }}">Cấp Quyền Admin</a></li>
                         <li><a href="{{ route('account.create') }}">Tạo Tài Khoản Admin</a></li>
+                        @endif
                     </ul>
                 </li>
+                {{-- category --}}
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Danh Mục Sản Phẩm</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{ route('categories.index') }}">Liệt Kê Danh Mục</a></li>
+						<li><a href="{{ route('categories.create') }}">Thêm Danh Mục</a></li>
+                    </ul>
+                </li>
+                {{-- product --}}
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-laptop"></i>
+                        <span>Sản Phẩm</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{ route('products.index') }}">Liệt Kê Sản Phẩm</a></li>
+						<li><a href="{{ route('products.create') }}">Thêm Sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="" href="{{ route('admin.manager.shipping') }}">
+                        <i class="fa fa-plane"></i>
+                        <span>Quản lý phí ship</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.manager.order') }}">
+                        <i class="fa fa-wpforms"></i>
+                        <span>Đơn Đặt Hàng</span>
+                    </a>
+                </li>
+                @if (Auth::user()->role == 1)
+                <li>
+                    <a class="" href="{{ route('admin.show.statistical') }}">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <span>Doanh Thu</span>
+                    </a>
+                </li>
+                @endif
             </ul>           
 		</div>
         <!-- sidebar menu end-->
@@ -281,7 +183,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+			  <p>© APPLE STORE</p>
 			</div>
 		  </div>
   <!-- / footer -->
@@ -295,20 +197,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="{{ asset('backend/asset/js/jquery.nicescroll.js') }}"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="{{ asset('backend/asset/js/jquery.scrollTo.js') }}"></script>
+<script src="{{ asset('backend/asset/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('backend/asset/alertifyjs/alertify.min.js') }}"></script>
+<script src="{{ asset('backend/asset/alertifyjs/alertify.js') }}"></script>
+<script src="{{ asset('backend/asset/js/sweetalert.min.js') }}"></script>
+@yield('js-form')
+@yield('js-form-edit')
 <!-- morris JavaScript -->	
 <script>
 	$(document).ready(function() {
 		//BOX BUTTON SHOW AND CLOSE
-	   jQuery('.small-graph-box').hover(function() {
-		  jQuery(this).find('.box-button').fadeIn('fast');
-	   }, function() {
-		  jQuery(this).find('.box-button').fadeOut('fast');
-	   });
-	   jQuery('.small-graph-box .box-close').click(function() {
-		  jQuery(this).closest('.small-graph-box').fadeOut(200);
-		  return false;
-	   });
-	   
+        jQuery('.small-graph-box').hover(function() {
+            jQuery(this).find('.box-button').fadeIn('fast');
+        }, function() {
+            jQuery(this).find('.box-button').fadeOut('fast');
+        });
+        jQuery('.small-graph-box .box-close').click(function() {
+            jQuery(this).closest('.small-graph-box').fadeOut(200);
+            return false;
+        });
 	    //CHARTS
 	    function gd(year, day, month) {
 			return new Date(year, month - 1, day).getTime();
